@@ -37,6 +37,7 @@
             </div>
             <h2>2. Kandariya Mahadev Temple</h2>
             <p>Located in Khajuraho, Madhya Pradesh</p>
+
             <p>Is a stunning example of Nagara-style architecture, built by the Chandela dynasty in the 11th century. The temple is famous for its intricately carved sculptures depicting gods, celestial beings, and mythological scenes, representing divine beauty and spirituality.</p>
         </section>
 
@@ -78,6 +79,22 @@
     <script>
         document.getElementById("backToTop").addEventListener("click", function() {
             window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let sliders = document.querySelectorAll(".slider");
+            sliders.forEach(slider => {
+                let images = slider.querySelectorAll("img");
+                let index = 0;
+
+                function showNextImage() {
+                    images.forEach(img => img.style.opacity = "0");
+                    images[index].style.opacity = "1";
+                    index = (index + 1) % images.length;
+                }
+                showNextImage();
+                setInterval(showNextImage, 3000);
+            });
         });
     </script>
 </body>
