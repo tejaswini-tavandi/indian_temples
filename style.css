@@ -2,6 +2,7 @@ body {
     font-family: 'Garamond', serif;
     margin: 0;
     padding: 0;
+    background-color: #f8f8f8;
 }
 
 .index-page {
@@ -10,36 +11,50 @@ body {
 }
 
 .temples-page {
-    background: url('images/bg_green.jpg') no-repeat center center fixed;
+    background: url('images/bg_sky.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
 header {
-    background-color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     color: black;
     font-size: 24px;
     width: 100%;
+    position:absolute;
     top: 0;
     left: 0;
-    transition: top 0.3s;
-    position:absolute;
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 50px;
+    padding: 15px 50px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.hidden {
-    display: none;
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #8b4513;
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 200px 50px 20px;
-    max-width: 800px;
+    padding: 120px 50px 20px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -48,8 +63,6 @@ h1 {
     font-weight: bold;
     font-style: italic;
     margin-bottom: 40px;
-    text-align: left;
-    flex-grow: 1;
 }
 
 h2 {
@@ -60,38 +73,37 @@ h2 {
     font-weight: bold;
     margin-top: 20px;
     margin-bottom: 20px;
-    text-align: left;
 }
 
 p {
     font-size: 18px;
-    text-align: left;
-    max-width: 800px;
-    margin-bottom: 30px;
     line-height: 1.6;
 }
 
-.button {
+.button, button {
     display: inline-block;
-    padding: 8px 16px;
-    background-color: #4a3f35;
+    padding: 10px 16px;
+    background-color: #8b4513;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     font-size: 16px;
-    position: absolute;
-    right: 50px;
-    top: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.button:hover, button:hover {
+    background-color: #5a2c0d;
 }
 
 .temple {
-    background-color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     padding: 20px;
     margin: 20px 0;
     border-radius: 10px;
     text-align: center;
-    max-width: 600px;
-    width: 100%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .slider {
@@ -101,18 +113,14 @@ p {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .slider img {
     width: 100%;
-    height: auto;
-    max-height: 300px;
+    height: 300px;
     position: absolute;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1s;
     object-fit: cover;
 }
 
@@ -135,29 +143,90 @@ p {
 .temple3 img:nth-child(2) { animation: slide 6s infinite 2s; }
 .temple3 img:nth-child(3) { animation: slide 6s infinite 4s; }
 
+
+#contact {
+    text-align: center;
+    padding: 50px 20px;
+    background: #eaeaea;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #4a3f35;
+    color: white;
+    margin-top: 40px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #f0c27b;
+}
+
+#backToTop {
+    margin-top: 10px;
+    background: white;
+    color: black;
+    border: none;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+#backToTop:hover {
+    background: #ddd;
+}
+
 @media screen and (max-width: 768px) {
-    body {
-        font-size: 16px;
+    header {
+        flex-direction: column;
+        text-align: center;
     }
-    h1 {
-        font-size: 28px;
+    nav ul {
+        flex-direction: column;
+        padding: 10px;
     }
-    h2 {
-        font-size: 22px;
-    }
-    p {
-        font-size: 16px;
-    }
-    .button {
+    .button, button {
         font-size: 14px;
-        right: 20px;
-        top: 15px;
     }
     .slider {
         height: auto;
     }
     .slider img {
         max-height: 250px;
+    }
+    main {
+        padding: 100px 20px 20px;
     }
 }
 
@@ -168,16 +237,26 @@ p {
     h2 {
         font-size: 20px;
     }
-    p {
-        font-size: 14px;
-    }
-    .button {
+    .button, button {
         font-size: 12px;
         padding: 6px 10px;
-        right: 15px;
-        top: 10px;
     }
     .slider img {
         max-height: 200px;
     }
+}
+
+.slider {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Ensures the full image is visible */
+    max-height: 500px; /* Adjust this value based on your design */
 }

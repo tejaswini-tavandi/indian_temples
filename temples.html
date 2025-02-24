@@ -9,10 +9,15 @@
 <body class="temples-page">
     <header>
         <h1>Famous Temples of India</h1>
-        <a href="index.html" class="button">Back to Home</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="temples.html">Temples</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <!-- Temple 1 -->
         <section class="temple">
             <div class="slider temple1">
                 <img src="images/1.1.jpg" alt="Temple 1 - Image 1">
@@ -21,11 +26,9 @@
             </div>
             <h2>1. Brihadeeswarar Temple</h2>
             <p>Located in Thanjavur, Tamil Nadu</p>
-            <p>Is a masterpiece of Dravidian architecture built by Raja Raja Chola I in the 11th century. The temple features a towering vimana, detailed sculptures, and a massive Nandi statue, showcasing the grandeur of Chola artistry.
-            </p>
+            <p>Is a masterpiece of Dravidian architecture built by Raja Raja Chola I in the 11th century. The temple features a towering vimana, detailed sculptures, and a massive Nandi statue, showcasing the grandeur of Chola artistry.</p>
         </section>
 
-        <!-- Temple 2 -->
         <section class="temple">
             <div class="slider temple2">
                 <img src="images/2.1.jpg" alt="Temple 2 - Image 1">
@@ -34,11 +37,9 @@
             </div>
             <h2>2. Kandariya Mahadev Temple</h2>
             <p>Located in Khajuraho, Madhya Pradesh</p>
-            <p>Is a stunning example of Nagara-style architecture, built by the Chandela dynasty in the 11th century. The temple is famous for its intricately carved sculptures depicting gods, celestial beings, and mythological scenes, representing divine beauty and spirituality.
-            </p>
+            <p>Is a stunning example of Nagara-style architecture, built by the Chandela dynasty in the 11th century. The temple is famous for its intricately carved sculptures depicting gods, celestial beings, and mythological scenes, representing divine beauty and spirituality.</p>
         </section>
 
-        <!-- Temple 3 -->
         <section class="temple">
             <div class="slider temple3">
                 <img src="images/3.1.jpg" alt="Temple 3 - Image 1">
@@ -50,5 +51,34 @@
             <p>Built in the 13th century by King Narasimhadeva I, is an architectural wonder designed as a massive stone chariot dedicated to the Sun God. The temple’s intricately carved wheels, horses, and mythological figures reflect the artistic brilliance of ancient India</p>
         </section>
     </main>
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Famous Temples of India | Follow us on 
+            <a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a>
+        </p>
+        <button id="backToTop">Back to Top</button>
+    </footer>
+    
+    <script>
+        document.getElementById("backToTop").addEventListener("click", function() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
 </body>
 </html>
