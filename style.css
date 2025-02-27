@@ -4,6 +4,10 @@ body {
     padding: 0;
     background-color: #f8f8f8;
     padding-top: 120px; /* Matches header height */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
 }
 
 .index-page {
@@ -59,6 +63,7 @@ main {
     max-width: 900px;
     margin: 0 auto;
     margin-top: 20px; /* Adds space between header and content */
+    flex: 1;
 }
 
 h1 {
@@ -110,42 +115,54 @@ p {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.slider {
+.temple .slider {
     width: 100%;
     max-width: 600px;
-    height: auto; /* Remove max-height to make the images responsive */
+    height: 300px;
     position: relative;
     overflow: hidden;
     border-radius: 10px;
+    display: flex;
 }
 
-.slider img {
+.temple .slider img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     position: absolute;
-    opacity: 0;
-    transition: opacity 1s;
-    object-fit: cover; /* Ensure images cover the container without distortion */
+    animation: slide 9s infinite;
 }
 
-/* For making images responsive on mobile */
+@keyframes slide {
+    0% { transform: translateX(0%); }
+    33% { transform: translateX(0%); }
+    34% { transform: translateX(-100%); }
+    66% { transform: translateX(-100%); }
+    67% { transform: translateX(-200%); }
+    100% { transform: translateX(-200%); }
+}
+
+.temple .slider img:nth-child(1) { animation-delay: 0s; }
+.temple .slider img:nth-child(2) { animation-delay: 3s; }
+.temple .slider img:nth-child(3) { animation-delay: 6s; }
+
 @media screen and (max-width: 768px) {
     .slider {
         width: 100%;
-        max-width: none;  /* Ensures slider stretches to full width */
+        max-width: none;
     }
     .slider img {
         width: 100%;
-        height: auto; /* Ensures images adjust to screen size */
+        height: auto;
     }
 }
 
 @media (min-width: 1024px) {
     body {
-        padding-top: 100px; /* Increases top padding for larger screens */
+        padding-top: 100px;
     }
     main {
-        padding: 80px 20px 20px; /* More space for better layout */
+        padding: 80px 20px 20px;
     }
 }
 
@@ -155,39 +172,16 @@ p {
         text-align: center;
         position: relative;
         z-index: 1000;
-        background: white; /* Ensures text is visible */
+        background: white;
         padding: 15px 0;
     }
     nav ul li {
         margin: 10px 0;
     }
     main {
-        padding: 140px 15px 20px; /* More space to avoid navbar overlap */
-    }
-    #backToTop {
-        bottom: 60px;
-        right: 10px;
+        padding: 140px 15px 20px;
     }
 }
-
-@keyframes slide {
-    0% { opacity: 1; }
-    33% { opacity: 1; }
-    34% { opacity: 0; }
-    100% { opacity: 0; }
-}
-
-.temple1 img:nth-child(1) { animation: slide 6s infinite 0s; }
-.temple1 img:nth-child(2) { animation: slide 6s infinite 2s; }
-.temple1 img:nth-child(3) { animation: slide 6s infinite 4s; }
-
-.temple2 img:nth-child(1) { animation: slide 6s infinite 0s; }
-.temple2 img:nth-child(2) { animation: slide 6s infinite 2s; }
-.temple2 img:nth-child(3) { animation: slide 6s infinite 4s; }
-
-.temple3 img:nth-child(1) { animation: slide 6s infinite 0s; }
-.temple3 img:nth-child(2) { animation: slide 6s infinite 2s; }
-.temple3 img:nth-child(3) { animation: slide 6s infinite 4s; }
 
 #contact {
     text-align: center;
@@ -219,26 +213,20 @@ input, textarea {
 
 footer {
     text-align: center;
-    padding: 20px;
-    background: #4a3f35;
-    color: white;
+    background: whitesmoke;
+    color:black;
     margin-top: 40px;
-}
-
-footer a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 0 10px;
-    transition: color 0.3s;
-}
-
-footer a:hover {
-    color: #f0c27b;
+    position: relative;
+    padding: 15px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    width: 100%;
+    
 }
 
 #backToTop {
-    margin-top: 10px;
+    display: block;
+    margin: 20px auto 0 auto;
     background: white;
     color: black;
     border: none;
@@ -246,95 +234,11 @@ footer a:hover {
     cursor: pointer;
     border-radius: 5px;
     transition: background 0.3s;
+    text-align: center;
+    position: relative;
+    bottom: 0;
 }
 
 #backToTop:hover {
     background: #ddd;
 }
-
-/* Responsive Styles for Smaller Screens */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-    nav ul {
-        flex-direction: column;
-        padding: 10px;
-    }
-    .button, button {
-        font-size: 14px;
-    }
-    .slider {
-        height: auto;
-    }
-    .slider img {
-        max-height: 250px;
-    }
-    main {
-        padding: 100px 20px 20px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    h1 {
-        font-size: 24px;
-    }
-    h2 {
-        font-size: 20px;
-    }
-    .button, button {
-        font-size: 12px;
-        padding: 6px 10px;
-    }
-    .slider img {
-        max-height: 200px;
-    }
-}
-
-/* Slider images with auto resizing */
-.slider {
-    display: flex;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-}
-
-.slider img {
-    width: 100%;
-    height: auto;
-    object-fit: contain; /* Ensures the full image is visible */
-    max-height: 500px; /* Adjust this value based on your design */
-}
-
-    /* Mobile View Fixes */
-    @media (max-width: 768px) {
-        .nav-toggle {
-            display: block;
-        }
-        nav ul {
-            display: none;
-            flex-direction: column;
-            text-align: center;
-            background: white;
-            position: absolute;
-            width: 100%;
-            top: 50px;
-            left: 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        nav ul.active {
-            display: flex;
-        }
-        .slider {
-            width: 100%;
-            max-width: none; /* Ensures slider stretches to full width on mobile */
-        }
-        .slider img {
-            display: block;
-            width: 100% !important; /* Force images to stretch to 100% */
-            height: auto;
-        }
-    }
-

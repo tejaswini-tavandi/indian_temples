@@ -20,7 +20,7 @@
             background: white;
             padding: 15px 20px;
             text-align: center;
-            position: fixed;
+            position:absolute;
             width: 100%;
             top: 0;
             left: 0;
@@ -63,34 +63,23 @@
             padding: 20px;
         }
         .slider {
-            display: flex;
-            overflow: hidden;
-            position: relative;
             width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            border-radius: 10px;
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
         }
         .slider img {
+            display: none;
             width: 100%;
             height: auto;
-            display: none;
+            object-fit: cover;
         }
         .slider img.active {
             display: block;
         }
-        #contact {
-            text-align: center;
-            padding: 20px;
-        }
-        #contact form {
-            display: flex;
-            flex-direction: column;
-            width: 90%;
-            max-width: 400px;
-            margin: auto;
-            gap: 10px;
-        }
+        
         footer {
             text-align: center;
             padding: 15px;
@@ -147,8 +136,6 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="temples.html">Temples</a></li>
-                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -165,7 +152,7 @@
         </section>
         <section class="temple">
             <div class="slider temple2">
-                <img src="images/2.1.jpg" alt="Temple 2 - Image 1">
+                <img src="images/2.1.jpg" alt="Temple 2 - Image 1" class="active">
                 <img src="images/2.2.jpg" alt="Temple 2 - Image 2">
                 <img src="images/2.3.jpg" alt="Temple 2 - Image 3">
             </div>
@@ -175,7 +162,7 @@
         </section>
         <section class="temple">
             <div class="slider temple3">
-                <img src="images/3.1.jpg" alt="Temple 3 - Image 1">
+                <img src="images/3.1.jpg" alt="Temple 3 - Image 1" class="active">
                 <img src="images/3.2.jpg" alt="Temple 3 - Image 2">
                 <img src="images/3.3.jpg" alt="Temple 3 - Image 3">
             </div>
@@ -189,25 +176,28 @@
         <button id="backToTop">Back to Top</button>
     </footer>
     <script>
-        document.getElementById("backToTop").addEventListener("click", function() {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-        document.querySelector(".nav-toggle").addEventListener("click", function() {
-            document.querySelector("nav ul").classList.toggle("active");
-        });
-        function startSlider(sliderClass) {
-            let images = document.querySelectorAll("." + sliderClass + " img");
-            let currentIndex = 0;
-            setInterval(() => {
-                images[currentIndex].classList.remove("active");
-                currentIndex = (currentIndex + 1) % images.length;
-                images[currentIndex].classList.add("active");
-            }, 3000);
-        }
         document.addEventListener("DOMContentLoaded", function () {
+            function startSlider(sliderClass) {
+                let images = document.querySelectorAll("." + sliderClass + " img");
+                if (images.length === 0) return;
+                let currentIndex = 0;
+                
+                setInterval(() => {
+                    images[currentIndex].classList.remove("active");
+                    currentIndex = (currentIndex + 1) % images.length;
+                    images[currentIndex].classList.add("active");
+                }, 3000);
+            }
             startSlider("temple1");
             startSlider("temple2");
             startSlider("temple3");
+            
+            document.getElementById("backToTop").addEventListener("click", function() {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+            document.querySelector(".nav-toggle").addEventListener("click", function() {
+                document.querySelector("nav ul").classList.toggle("active");
+            });
         });
     </script>
 </body>
