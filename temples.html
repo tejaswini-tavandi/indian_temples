@@ -5,10 +5,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Famous Temples of India</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+        header {
+            background: white;
+            padding: 15px 20px;
+            text-align: center;
+            position:absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+            white-space: nowrap;
+            flex-grow: 1;
+            text-align:justify;
+        }
+        .nav-toggle {
+            display: none;
+            cursor: pointer;
+            border:#333;
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 24px;
+            background:rgb(160, 159, 159);
+            color:black;
+            position:absolute;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            margin: 10px 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+        }
+        .temple {
+            text-align: center;
+            padding: 20px;
+        }
+        .slider {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .slider img {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .slider img:first-child {
+            opacity: 1;
+        }
+        #contact {
+            text-align: center;
+            padding: 20px;
+        }
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            max-width: 400px;
+            margin: auto;
+            gap: 10px;
+        }
+        #contact form input, #contact form textarea {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #contact form button {
+            background: #333;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+        }
+        #backToTop {
+            margin-top: 10px;
+            padding: 8px 12px;
+            background: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                text-align: center;
+                background: white;
+                position: absolute;
+                width: 100%;
+                top: 50px;
+                left: 0;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            nav ul.active {
+                display: flex;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
 </head>
 <body class="temples-page">
     <header>
         <h1>Famous Temples of India</h1>
+        <button class="nav-toggle">☰</button>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -26,9 +169,8 @@
             </div>
             <h2>1. Brihadeeswarar Temple</h2>
             <p>Located in Thanjavur, Tamil Nadu</p>
-            <p>Is a masterpiece of Dravidian architecture built by Raja Raja Chola I in the 11th century. The temple features a towering vimana, detailed sculptures, and a massive Nandi statue, showcasing the grandeur of Chola artistry.</p>
+            <p>Is a masterpiece of Dravidian architecture built by Raja Raja Chola I in the 11th century. The temple features a towering vimana, detailed sculptures, and a massive Nandi statue.</p>
         </section>
-
         <section class="temple">
             <div class="slider temple2">
                 <img src="images/2.1.jpg" alt="Temple 2 - Image 1">
@@ -37,10 +179,8 @@
             </div>
             <h2>2. Kandariya Mahadev Temple</h2>
             <p>Located in Khajuraho, Madhya Pradesh</p>
-
-            <p>Is a stunning example of Nagara-style architecture, built by the Chandela dynasty in the 11th century. The temple is famous for its intricately carved sculptures depicting gods, celestial beings, and mythological scenes, representing divine beauty and spirituality.</p>
+            <p>Is a stunning example of Nagara-style architecture, built by the Chandela dynasty in the 11th century.</p>
         </section>
-
         <section class="temple">
             <div class="slider temple3">
                 <img src="images/3.1.jpg" alt="Temple 3 - Image 1">
@@ -49,52 +189,19 @@
             </div>
             <h2>3. Konark Sun Temple</h2>
             <p>Located in Konark, Odisha</p>
-            <p>Built in the 13th century by King Narasimhadeva I, is an architectural wonder designed as a massive stone chariot dedicated to the Sun God. The temple’s intricately carved wheels, horses, and mythological figures reflect the artistic brilliance of ancient India</p>
+            <p>Built in the 13th century by King Narasimhadeva I, it is an architectural wonder designed as a massive stone chariot dedicated to the Sun God.</p>
         </section>
     </main>
-    
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            
-            <button type="submit">Send</button>
-        </form>
-    </section>
-    
     <footer>
-        <p>&copy; 2025 Famous Temples of India | Follow us on 
-            <a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a>
-        </p>
+        <p>&copy; 2025 Famous Temples of India | Follow us on <a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a></p>
         <button id="backToTop">Back to Top</button>
     </footer>
-    
     <script>
         document.getElementById("backToTop").addEventListener("click", function() {
             window.scrollTo({ top: 0, behavior: "smooth" });
         });
-
-        document.addEventListener("DOMContentLoaded", function () {
-            let sliders = document.querySelectorAll(".slider");
-            sliders.forEach(slider => {
-                let images = slider.querySelectorAll("img");
-                let index = 0;
-
-                function showNextImage() {
-                    images.forEach(img => img.style.opacity = "0");
-                    images[index].style.opacity = "1";
-                    index = (index + 1) % images.length;
-                }
-                showNextImage();
-                setInterval(showNextImage, 3000);
-            });
+        document.querySelector(".nav-toggle").addEventListener("click", function() {
+            document.querySelector("nav ul").classList.toggle("active");
         });
     </script>
 </body>

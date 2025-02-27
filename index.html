@@ -42,14 +42,15 @@
         }
         .menu-toggle {
             display: none;
+            cursor: pointer;
+            border:#333;
+            position: absolute;
+            right: 20px;
+            top: 15px;
             font-size: 24px;
             background:rgb(160, 159, 159);
-            border: none;
-            cursor: pointer;
             color:black;
             position:absolute;
-            top: 15px;
-            right: 20px;
         }
         .menu-toggle:focus {
             outline:auto;
@@ -58,7 +59,7 @@
             position: relative;
         }
         nav ul {
-            list-style:disc;
+            list-style: none;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -67,10 +68,9 @@
             margin: 10px 20px;
         }
         nav ul li a {
-            color:#333;
-            text-decoration:wavy;
+            text-decoration: none;
+            color: #333;
             font-size: 18px;
-            background: #ccc;
         }
         @media (max-width: 768px) {
             .menu-toggle {
