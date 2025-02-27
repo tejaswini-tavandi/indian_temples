@@ -22,7 +22,7 @@
             color: #333;
             padding: 15px 5px;
             text-align: center;
-            position: fixed;
+            position:absolute;
             width: 100%;
             top: 0;
             left: 0;
@@ -43,22 +43,22 @@
         .menu-toggle {
             display: none;
             font-size: 24px;
-            background:rgb(215, 211, 211);
+            background:rgb(160, 159, 159);
             border: none;
             cursor: pointer;
             color:black;
-            position:fixed;
+            position:absolute;
             top: 15px;
             right: 20px;
         }
         .menu-toggle:focus {
-            outline: none;
+            outline:auto;
         }
         nav {
             position: relative;
         }
         nav ul {
-            list-style: none;
+            list-style:disc;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -67,9 +67,10 @@
             margin: 10px 20px;
         }
         nav ul li a {
-            color: #333;
-            text-decoration: none;
+            color:#333;
+            text-decoration:wavy;
             font-size: 18px;
+            background: #ccc;
         }
         @media (max-width: 768px) {
             .menu-toggle {
