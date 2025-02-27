@@ -20,24 +20,21 @@
         header {
             background: white;
             color: #333;
-            padding: 20px;
+            padding: 15px 20px;
             text-align: center;
-            position:absolute;
+            position: fixed;
             width: 100%;
             top: 0;
             left: 0;
             z-index: 1000;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             display: flex;
-            justify-content:space-between;
+            justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
-            text-rendering: optimizeLegibility;
         }
         header h1 {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
-            text-align: center;
             margin: 0;
             white-space: nowrap;
         }
@@ -47,20 +44,19 @@
             background: none;
             border: none;
             cursor: pointer;
-            position: absolute;
-            right: 20px;
-            top: 15px;
             color: #333;
         }
         .menu-toggle:focus {
             outline: none;
+        }
+        nav {
+            position: relative;
         }
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            padding: 10px;
         }
         nav ul li {
             margin: 10px 20px;
@@ -79,7 +75,7 @@
                 flex-direction: column;
                 background: white;
                 position: absolute;
-                top: 60px;
+                top: 50px;
                 right: 0;
                 width: 60%;
                 text-align: center;
@@ -91,9 +87,6 @@
             }
             nav ul li {
                 margin: 10px 0;
-            }
-            main {
-                padding: 120px 15px 20px;
             }
         }
     </style>
