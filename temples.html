@@ -66,9 +66,10 @@
             display: flex;
             overflow: hidden;
             position: relative;
-            width: 90%;
+            width: 100%;
             max-width: 600px;
             margin: 0 auto;
+            border-radius: 10px;
         }
         .slider img {
             width: 100%;
@@ -104,6 +105,8 @@
             border: none;
             cursor: pointer;
         }
+
+        /* Mobile View Fixes */
         @media (max-width: 768px) {
             .nav-toggle {
                 display: block;
@@ -124,11 +127,17 @@
             }
             .slider {
                 width: 100%;
+                max-width: none; /* Ensures slider stretches to full width on mobile */
+            }
+            .slider img {
+                display: block;
+                width: 100% !important; /* Force images to stretch to 100% */
+                height: auto;
             }
         }
     </style>
 </head>
-<body>
+<body class="temples-page">
     <header>
         <h1>Famous Temples of India</h1>
         <button class="nav-toggle">☰</button>
@@ -177,23 +186,15 @@
         <button id="backToTop">Back to Top</button>
     </footer>
     <script>
-        document.getElementById("backToTop").addEventListener("click", function() {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-        document.querySelector(".nav-toggle").addEventListener("click", function() {
-            document.querySelector("nav ul").classList.toggle("active");
-        });
-        function startSlider(sliderClass) {
-            let images = document.querySelectorAll("." + sliderClass + " img");
+        document.addEventListener("DOMContentLoaded", function() {
+            let slides = document.querySelectorAll(".slider img");
             let currentIndex = 0;
-            setInterval(() => {
-                images[currentIndex].classList.remove("active");
-                currentIndex = (currentIndex + 1) % images.length;
-                images[currentIndex].classList.add("active");
+
+            setInterval(function() {
+                slides[currentIndex].classList.remove("active");
+                currentIndex = (currentIndex + 1) % slides.length;
+                slides[currentIndex].classList.add("active");
             }, 3000);
-        }
-        document.addEventListener("DOMContentLoaded", function () {
-            startSlider("temple1");
         });
     </script>
 </body>
