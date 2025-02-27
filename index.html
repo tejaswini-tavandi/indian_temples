@@ -14,7 +14,7 @@
         }
         body {
             line-height: 1.6;
-            padding-top: 80px; /* Ensures body content doesn't overlap with the header */
+            padding-top: 80px;
             position: relative;
         }
         header {
@@ -28,6 +28,22 @@
             left: 0;
             z-index: 1000;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav {
+            position: relative;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+        .menu-toggle:focus {
+            outline: none;
         }
         nav ul {
             list-style: none;
@@ -44,71 +60,30 @@
             text-decoration: none;
             font-size: 18px;
         }
-        main {
-            padding: 40px 20px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-        section {
-            padding: 30px;
-            text-align: center;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            max-width: 400px;
-            margin: auto;
-        }
-        input, textarea, button {
-            margin: 15px 0;
-            padding: 12px;
-            font-size: 16px;
-            width: 100%;
-        }
-        button {
-            background: #333;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #555;
-        }
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            position: relative;
-            width: 100%;
-        }
-        #backToTop {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #333;
-            color: white;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            z-index: 1000;
-        }
         @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
             nav ul {
+                display: none;
                 flex-direction: column;
+                background: white;
+                position: absolute;
+                top: 60px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80%;
                 text-align: center;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            nav ul.show {
+                display: flex;
             }
             nav ul li {
                 margin: 10px 0;
             }
             main {
                 padding: 120px 15px 20px;
-            }
-            #backToTop {
-                bottom: 60px;
-                right: 10px;
             }
         }
     </style>
@@ -117,6 +92,7 @@
     <header>
         <h1>Ancient Architecture of India</h1>
         <nav>
+            <button class="menu-toggle">☰</button>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="temples.html">Temples</a></li>
@@ -154,7 +130,11 @@
     </section>
     <footer>
         <p>&copy; 2025 Ancient Architecture of India | Follow us on <a href="#">Instagram</a></p>
-        <button id="backToTop">Back to Top</button>
     </footer>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+    </script>
 </body>
 </html>
