@@ -5,10 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ancient Architecture of India</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            line-height: 1.6;
+        }
+        header {
+            background: white;
+            color: #333;
+            padding: 15px;
+            font-weight: bold;
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            text-align: center;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+        nav ul li {
+            margin: 5px 15px;
+        }
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        main {
+            padding: 150px 20px 20px; /* Increased top padding for better spacing */
+            max-width: 900px;
+            margin: auto;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: auto;
+        }
+        input, textarea, button {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+        }
+        button {
+            background: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #555;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        #backToTop {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #333;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            main {
+                padding: 170px 10px 20px; /* Adjusted for smaller screens */
+            }
+        }
+    </style>
 </head>
 <body class="index-page">
     <header>
-        <h1>Ancient Architecture of India</h1>
+        <h1 >Ancient Architecture of India</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -22,37 +122,29 @@
         <p>From intricate temples to majestic forts, the artistry and craftsmanship of Indian architecture stand as a testament to its glorious past.</p>
         
         <h2>Construction Techniques and Materials</h2>
-        <p>Ancient Indian architecture relied heavily on locally available materials such as sandstone, granite, marble, and wood. Skilled artisans crafted elaborate stone carvings, detailed frescoes, and intricate sculptures that adorned temples and palaces. Lime mortar and natural adhesives were commonly used for binding stones together.
-        </p>
+        <p>Ancient Indian architecture relied heavily on locally available materials such as sandstone, granite, marble, and wood. Skilled artisans crafted elaborate stone carvings, detailed frescoes, and intricate sculptures that adorned temples and palaces. Lime mortar and natural adhesives were commonly used for binding stones together.</p>
         
         <h2>Tools and Methods</h2>
-        <p>Master artisans and sculptors used chisels, hammers, and carving tools made of iron and bronze. Wooden scaffolding and pulley systems were employed to lift heavy stones into place. Intricate measurements and geometric precision were key aspects of their construction process, often guided by sacred texts and architectural treatises.
-        </p>
+        <p>Master artisans and sculptors used chisels, hammers, and carving tools made of iron and bronze. Wooden scaffolding and pulley systems were employed to lift heavy stones into place. Intricate measurements and geometric precision were key aspects of their construction process, often guided by sacred texts and architectural treatises.</p>
 
         <h2>Time Period and Evolution</h2>
-        <p>The evolution of Indian architecture spans thousands of years, from the rock-cut caves of the Mauryan period (3rd century BCE) to the grand temple complexes of the Chola and Vijayanagara empires (9th-16th century CE). Each era introduced new architectural styles, incorporating influences from various dynasties and cultures.
-        </p>
+        <p>The evolution of Indian architecture spans thousands of years, from the rock-cut caves of the Mauryan period (3rd century BCE) to the grand temple complexes of the Chola and Vijayanagara empires (9th-16th century CE). Each era introduced new architectural styles, incorporating influences from various dynasties and cultures.</p>
 
         <h2>Cultural and Religious Significance</h2>
-        <p>Architecture in India was deeply connected to spirituality and religious beliefs. Temples were designed according to sacred geometric patterns, ensuring harmony with cosmic energies. Intricate carvings depicted mythological stories, celestial beings, and daily life, creating an immersive spiritual experience for devotees.</p>
+        <p>Architecture in India was deeply connected to spirituality and religious beliefs. Temples were designed according to sacred geometric patterns, ensuring harmony with cosmic energies. Intricate carvings depicted mythological stories, celestial beings, and daily life, creating an immersive spiritual experience for devotees.</p>
     </main>
-    
     <section id="contact">
         <h2>Contact Us</h2>
         <form>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
-            
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
-            
             <label for="message">Message:</label>
             <textarea id="message" name="message" required></textarea>
-            
             <button type="submit">Send</button>
         </form>
     </section>
-    
     <footer>
         <p>&copy; 2025 Ancient Architecture of India | Follow us on <a href="#">Instagram</a></p>
         <button id="backToTop">Back to Top</button>
