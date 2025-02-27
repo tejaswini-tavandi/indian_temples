@@ -22,7 +22,7 @@
             color: #333;
             padding: 15px 20px;
             text-align: center;
-            position:absolute;
+            position: fixed;
             width: 100%;
             top: 0;
             left: 0;
@@ -39,15 +39,18 @@
             white-space: nowrap;
         }
         .menu-toggle {
-            display:none;
+            display: none;
             font-size: 24px;
-            background:white;
+            background: white;
             border: none;
             cursor: pointer;
             color: #333;
+            position: absolute;
+            top: 15px;
+            right: 20px;
         }
         .menu-toggle:focus {
-            outline:invert;
+            outline: none;
         }
         nav {
             position: relative;
