@@ -130,7 +130,7 @@ p {
     height: 100%;
     object-fit: cover;
     position: absolute;
-    animation: slide 9s infinite;
+    animation: slide 6s infinite;
 }
 
 @keyframes slide {
@@ -143,8 +143,8 @@ p {
 }
 
 .temple .slider img:nth-child(1) { animation-delay: 0s; }
-.temple .slider img:nth-child(2) { animation-delay: 3s; }
-.temple .slider img:nth-child(3) { animation-delay: 6s; }
+.temple .slider img:nth-child(2) { animation-delay: 2s; }
+.temple .slider img:nth-child(3) { animation-delay: 4s; }
 
 @media screen and (max-width: 768px) {
     .slider {
