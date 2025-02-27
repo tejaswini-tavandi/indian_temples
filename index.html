@@ -15,6 +15,7 @@
         body {
             line-height: 1.6;
             padding-top: 80px; /* Ensures body content doesn't overlap with the header */
+            position: relative;
         }
         header {
             background: white;
@@ -44,7 +45,7 @@
             font-size: 18px;
         }
         main {
-            padding: 40px 20px 20px; /* More padding for better spacing */
+            padding: 40px 20px 20px;
             max-width: 900px;
             margin: auto;
         }
@@ -79,6 +80,8 @@
             text-align: center;
             padding: 20px;
             margin-top: 40px;
+            position: relative;
+            width: 100%;
         }
         #backToTop {
             display: none;
@@ -90,6 +93,7 @@
             padding: 10px;
             border: none;
             cursor: pointer;
+            z-index: 1000;
         }
         @media (max-width: 768px) {
             nav ul {
@@ -100,7 +104,11 @@
                 margin: 10px 0;
             }
             main {
-                padding: 150px 15px 20px; /* Extra padding for smaller screens */
+                padding: 120px 15px 20px;
+            }
+            #backToTop {
+                bottom: 60px;
+                right: 10px;
             }
         }
     </style>
