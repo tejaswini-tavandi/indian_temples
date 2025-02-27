@@ -139,6 +139,28 @@ p {
     }
 }
 
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        position: relative;
+        z-index: 1000;
+        background: white; /* Ensures text is visible */
+        padding: 15px 0;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+    main {
+        padding: 140px 15px 20px; /* More space to avoid navbar overlap */
+    }
+    #backToTop {
+        bottom: 60px;
+        right: 10px;
+    }
+}
+
+
 
 @keyframes slide {
     0% { opacity: 1; }
