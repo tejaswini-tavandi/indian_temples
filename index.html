@@ -28,9 +28,10 @@
             left: 0;
             z-index: 1000;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        nav {
-            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
         }
         .menu-toggle {
             display: none;
@@ -40,7 +41,7 @@
             cursor: pointer;
             position: absolute;
             right: 20px;
-            top: 20px;
+            top: 15px;
         }
         .menu-toggle:focus {
             outline: none;
@@ -69,12 +70,12 @@
                 flex-direction: column;
                 background: white;
                 position: absolute;
-                top: 60px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 80%;
+                top: 50px;
+                right: 0;
+                width: 60%;
                 text-align: center;
                 box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                padding: 10px 0;
             }
             nav ul.show {
                 display: flex;
@@ -91,8 +92,8 @@
 <body class="index-page">
     <header>
         <h1>Ancient Architecture of India</h1>
+        <button class="menu-toggle">☰</button>
         <nav>
-            <button class="menu-toggle">☰</button>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="temples.html">Temples</a></li>
