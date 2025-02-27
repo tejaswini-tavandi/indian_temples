@@ -96,6 +96,9 @@
             padding: 15px;
             background: white;
             box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+            position: relative; /* Change to fixed or sticky if needed */
+            bottom: 0;
+            width: 100%;
         }
         #backToTop {
             margin-top: 10px;
@@ -186,15 +189,25 @@
         <button id="backToTop">Back to Top</button>
     </footer>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let slides = document.querySelectorAll(".slider img");
+        document.getElementById("backToTop").addEventListener("click", function() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+        document.querySelector(".nav-toggle").addEventListener("click", function() {
+            document.querySelector("nav ul").classList.toggle("active");
+        });
+        function startSlider(sliderClass) {
+            let images = document.querySelectorAll("." + sliderClass + " img");
             let currentIndex = 0;
-
-            setInterval(function() {
-                slides[currentIndex].classList.remove("active");
-                currentIndex = (currentIndex + 1) % slides.length;
-                slides[currentIndex].classList.add("active");
+            setInterval(() => {
+                images[currentIndex].classList.remove("active");
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.add("active");
             }, 3000);
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            startSlider("temple1");
+            startSlider("temple2");
+            startSlider("temple3");
         });
     </script>
 </body>
