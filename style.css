@@ -298,3 +298,32 @@ footer a:hover {
     object-fit: contain; /* Ensures the full image is visible */
     max-height: 500px; /* Adjust this value based on your design */
 }
+
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+    display: none; /* Hide all images */
+}
+
+.slider img.active {
+    display: block; /* Show only active image */
+}
+
+@media (max-width: 768px) {
+    .slider {
+        max-width: 100%;
+    }
+    
+    .slider img {
+        width: 100%;
+        height: auto;
+    }
+}
